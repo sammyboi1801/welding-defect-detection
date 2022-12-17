@@ -107,6 +107,24 @@ This leaves us with a robust dataset which can be sent for training!
 
 3) In the end, we tried out the normal gradient boosting algorithm. This model over-the-top gave us a good accuracy score. We decided this could be a good starting point to reach to our final deployable model.
 
+Finally, we decided that XGBoost, an advanced version of gradient boosting algorithm, can be used to train our model.
+
+![image](https://user-images.githubusercontent.com/80597420/208260799-76798c51-8044-45b6-970f-08ba3881cf81.png)
+
+As we can see, XGBoost gave us a really good accuracy(96%) and F1-score. This was achieved after tuning parameters such as n_estimators.
+
+
+<h2>Deploying the model</h2>
+We created a simple web page using Tailwind CSS and used a Flask server for deploying it on AWS EC2.
+
+Our model is really efficient and easily runs on the resources available on the Free Tier provided by AWS. Our model hardly takes 30% of 1GB RAM while running. The total size of the model is just 35MB. This makes this model really suitable for scaling. 
+
+The cost of operation of this model is minimal, which can be our calculation of Total Cost of Ownership(TCO) of our model!
+<hr>
+
+You can find all the files for our project over here. 
+
+Happy Learning :)
 
 
 
