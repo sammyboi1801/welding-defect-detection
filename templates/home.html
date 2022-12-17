@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Welding Defect Predictor</title>
+</head>
+
+
+<body style="background-color: #111827;">
+    
+
+
+    <section class="text-gray-400 bg-gray-900 body-font">
+        <div class="container px-5 py-16 mx-auto">
+
+
+          <form action="/predict" method="post">
+
+            <div class="text-center mb-10">
+              <center>
+              <span>
+              
+              <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="70px" height="70px">
+              <polyline style="fill:#999999;" points="468.639,264.664 468.639,233.047 436.119,233.047 436.119,264.664 "/>
+              <path style="fill:#F95428;" d="M502.364,494.959h-99.97V311.938c0-27.606,22.379-49.985,49.985-49.985l0,0
+                c27.606,0,49.985,22.379,49.985,49.985V494.959z"/>
+              <path style="fill:#E54728;" d="M463.219,263.145c-3.492-0.772-7.116-1.192-10.84-1.192l0,0c-27.606,0-49.985,22.379-49.985,49.985
+                v183.022h21.68V311.938C424.075,288.057,440.827,268.099,463.219,263.145z"/>
+              <path style="fill:#71C5F4;" d="M335.616,311.096H222.025c-41.139,0-74.491,33.35-74.491,74.489v109.342h262.571V385.585
+                C410.105,344.446,376.755,311.096,335.616,311.096z"/>
+              <path style="fill:#64B4D8;" d="M267.922,311.096h-45.897c-41.139,0-74.491,33.35-74.491,74.491v109.341h45.897V385.586
+                C193.431,344.446,226.783,311.096,267.922,311.096z"/>
+              <path style="fill:#F7CBA4;" d="M238.166,305.314l-49.442-10.49c-26.127-18.982-40.261-50.373-37.155-82.518l8.576-88.742
+                c5.907-61.12,57.268-107.758,118.672-107.758l0,0c61.404,0,112.766,46.638,118.672,107.758l8.576,88.742
+                c3.106,32.146-11.027,63.535-37.155,82.518l-49.442,10.49C295.228,322.925,262.406,322.925,238.166,305.314z"/>
+              <path style="fill:#E0B394;" d="M182.337,229.795c-0.831,14.056,3.746,27.883,12.803,38.663l51.675,63.499
+                c2.698,3.216,5.757,5.914,9.07,8.07c-6.215-2.168-12.189-5.276-17.718-9.286l-49.443-35.917
+                c-26.125-18.982-40.253-50.37-37.145-82.517l8.564-88.744c5.854-60.524,56.272-106.847,116.892-107.726
+                c-37.338,0.903-79.618,36.097-81.822,73.58L182.337,229.795z"/>
+              <path style="fill:#AF7C38;" d="M278.816,15.836c30.437,0,58.404,11.454,79.578,30.449c-21.174,18.994-49.142,30.449-79.578,30.449
+                s-58.404-11.454-79.578-30.449C220.412,27.29,248.38,15.836,278.816,15.836z"/>
+              <polygon style="fill:#666666;" points="376.642,212.981 416.559,212.981 416.559,165.104 376.642,165.104 177.437,165.104 
+                137.522,165.104 137.522,212.981 177.437,212.981 "/>
+              <path style="fill:#999999;" d="M336.59,105.091H217.492c-22.119,0-40.049,17.931-40.049,40.049v117.014
+                c0,38.782,31.439,70.221,70.221,70.221h58.757c38.782,0,70.221-31.439,70.221-70.221V145.14
+                C376.64,123.022,358.709,105.091,336.59,105.091z"/>
+              <path style="fill:#808080;" d="M204.149,262.155V145.141c0-22.119,17.931-40.049,40.049-40.049h-26.706
+                c-22.119,0-40.049,17.931-40.049,40.049v117.014c0,38.782,31.439,70.221,70.221,70.221h26.706
+                C235.587,332.376,204.149,300.937,204.149,262.155z"/>
+              <rect x="216.199" y="165.191" style="fill:#FFFFFF;" width="121.686" height="38.543"/>
+              <rect x="53.405" y="286.046" style="fill:#F9C573;" width="42.156" height="128.877"/>
+              <polygon style="fill:#E6E6E6;" points="337.884,165.187 337.884,203.73 262.52,203.73 284.996,165.187 "/>
+              <path d="M182.582,486.528h-27.191V381.873c0-20.34,10.398-38.795,27.813-49.369c4.265-2.59,5.622-8.146,3.034-12.41
+                c-2.588-4.264-8.143-5.624-12.409-3.034c-22.858,13.878-36.505,38.107-36.505,64.813v113.688c0,4.989,4.045,9.033,9.033,9.033
+                h36.224c4.989,0,9.033-4.045,9.033-9.033C191.615,490.573,187.57,486.528,182.582,486.528z"/>
+              <path d="M381.445,317.06c-4.265-2.59-9.82-1.231-12.409,3.034c-2.588,4.265-1.231,9.821,3.034,12.41
+                c17.424,10.578,27.825,29.033,27.825,49.369v104.655H286.677V382.326l38.035,39.864c1.733,1.816,4.107,2.798,6.537,2.798
+                c0.948,0,1.904-0.149,2.834-0.456c3.313-1.096,5.699-4.002,6.129-7.465l7.335-59.151c0.614-4.952-2.902-9.462-7.853-10.076
+                c-4.953-0.613-9.462,2.903-10.076,7.853l-4.99,40.238l-40.443-42.387c-1.704-1.786-4.066-2.798-6.535-2.798l0,0
+                c-2.469,0-4.83,1.011-6.535,2.797l-40.455,42.391l-4.991-40.241c-0.613-4.95-5.126-8.471-10.076-7.853
+                c-4.952,0.614-8.467,5.125-7.853,10.076l7.335,59.151c0.429,3.463,2.815,6.369,6.128,7.465c3.313,1.095,6.962,0.184,9.371-2.34
+                l38.035-39.855v104.192h-55.917c-4.989,0-9.033,4.045-9.033,9.033c0,4.989,4.045,9.033,9.033,9.033h196.236
+                c4.989,0,9.033-4.045,9.033-9.033V381.873C417.962,355.172,404.311,330.942,381.445,317.06z"/>
+              <path d="M307.021,342.012c32.179,0,59.922-19.289,72.323-46.903c0.388-0.361,0.776-0.735,1.142-1.088
+                c19.698-18.883,30.645-44.482,30.844-71.405h5.832c4.989,0,9.033-4.045,9.033-9.033v-47.877c0-4.989-4.045-9.033-9.033-9.033h-8.636
+                l-3.222-33.34c-3.071-31.796-17.791-61.14-41.449-82.627C340.208,19.231,309.59,7.405,277.637,7.405
+                c-31.947,0-62.567,11.828-86.218,33.304c-23.652,21.477-38.371,50.818-41.449,82.622l-3.222,33.34h-8.624
+                c-4.989,0-9.033,4.045-9.033,9.033v47.877c0,4.989,4.045,9.033,9.033,9.033h5.831c0.196,26.944,11.144,52.541,30.821,71.383
+                c0.389,0.375,0.777,0.749,1.166,1.111c12.401,27.613,40.143,46.901,72.323,46.901h58.757V342.012z M408.128,174.738v29.81h-21.852
+                v-29.81H408.128z M386.275,254.956v-32.341h6.971C393.142,233.876,390.757,244.852,386.275,254.956z M342.893,46.89
+                c-18.84,13.866-41.639,21.412-65.256,21.412c-23.617,0-46.415-7.545-65.255-21.409c18.847-13.87,41.622-21.421,65.255-21.421
+                C301.273,25.47,324.05,33.021,342.893,46.89z M167.954,125.07c2.416-24.973,13.209-48.162,30.558-66.057
+                c22.521,17.679,50.293,27.356,79.125,27.356s56.606-9.677,79.127-27.357c17.353,17.902,28.146,41.091,30.557,66.057l3.055,31.604
+                h-4.099v-10.929c0-27.064-22.019-49.083-49.083-49.083H218.095c-27.064,0-49.083,22.019-49.083,49.083v10.929h-4.111L167.954,125.07
+                z M147.157,204.549v-29.81h21.852v29.81H147.157z M162.038,222.615h6.973v32.364C164.528,244.875,162.142,233.89,162.038,222.615z
+                 M187.077,262.757V145.744c0-17.102,13.914-31.016,31.016-31.016h119.099c17.102,0,31.016,13.914,31.016,31.016v117.014
+                c0,33.738-27.448,61.187-61.187,61.187h-58.757C214.525,323.945,187.077,296.495,187.077,262.757z"/>
+              <path d="M119.95,467.914H96.305c-7.218,0-13.091-5.873-13.091-13.091v-30.269h12.948c4.989,0,9.033-4.045,9.033-9.033V286.644
+                c0-4.989-4.045-9.033-9.033-9.033H84.118v-78.892c0-2.396-0.952-4.694-2.646-6.387l-24.541-24.541
+                c-3.528-3.528-9.248-3.528-12.774,0c-3.528,3.528-3.528,9.247,0,12.774l21.895,21.895v75.149H54.006
+                c-4.989,0-9.033,4.045-9.033,9.033V415.52c0,4.989,4.045,9.033,9.033,9.033h11.141v30.269c0,17.18,13.978,31.158,31.158,31.158
+                h23.645c4.989,0,9.033-4.045,9.033-9.033C128.983,471.958,124.939,467.914,119.95,467.914z M63.04,295.678h24.089v110.81H63.04
+                C63.04,406.487,63.04,295.678,63.04,295.678z"/>
+              <path d="M11.384,167.791l-8.738,8.738c-3.528,3.528-3.528,9.247,0,12.774c1.763,1.765,4.076,2.646,6.387,2.646
+                s4.624-0.882,6.387-2.646l8.738-8.738c3.528-3.528,3.528-9.247,0-12.774C20.632,164.263,14.912,164.263,11.384,167.791z"/>
+              <path d="M50.543,150.441c2.311,0,4.624-0.882,6.387-2.646l8.74-8.74c3.528-3.528,3.528-9.248,0-12.776
+                c-3.527-3.528-9.247-3.528-12.774,0l-8.74,8.74c-3.528,3.528-3.528,9.248,0,12.776C45.919,149.559,48.231,150.441,50.543,150.441z"
+                />
+              <path d="M15.42,126.281c-3.528-3.528-9.248-3.527-12.774,0c-3.528,3.528-3.528,9.248,0,12.776l8.738,8.74
+                c1.763,1.765,4.076,2.646,6.387,2.646s4.624-0.882,6.387-2.646c3.528-3.528,3.528-9.248,0-12.776L15.42,126.281z"/>
+              <path d="M478.275,259.228v-25.58c0-4.989-4.045-9.033-9.033-9.033h-32.52c-4.989,0-9.033,4.045-9.033,9.033v25.58
+                c-19.92,9.49-33.725,29.816-33.725,53.312c0,4.989,4.045,9.033,9.033,9.033c4.989,0,9.033-4.045,9.033-9.033
+                c0-22.581,18.37-40.951,40.951-40.951s40.951,18.37,40.951,40.951v29.91c0,4.989,4.045,9.033,9.033,9.033
+                c4.989,0,9.033-4.045,9.033-9.033v-29.91C512,289.045,498.195,268.718,478.275,259.228z M445.755,253.981v-11.299h14.453v11.299
+                c-2.37-0.291-4.779-0.459-7.227-0.459S448.125,253.689,445.755,253.981z"/>
+              <path d="M502.966,363.528c-4.989,0-9.033,4.045-9.033,9.033v113.967h-58.416c-4.989,0-9.033,4.045-9.033,9.033
+                c0,4.989,4.045,9.033,9.033,9.033h67.449c4.989,0,9.033-4.045,9.033-9.033v-123C512,367.573,507.955,363.528,502.966,363.528z"/>
+              <path d="M347.517,204.332v-38.538c0-4.989-4.045-9.033-9.033-9.033h-16.587c-4.989,0-9.033,4.045-9.033,9.033
+                s4.045,9.033,9.033,9.033h7.553v20.471H225.826v-20.471h69.572c4.989,0,9.033-4.045,9.033-9.033s-4.045-9.033-9.033-9.033h-78.605
+                c-4.989,0-9.033,4.045-9.033,9.033v38.538c0,4.989,4.045,9.033,9.033,9.033h121.691
+                C343.474,213.365,347.517,209.321,347.517,204.332z"/>
+              </svg>
+                  
+          </span>
+            </center>
+            <br>
+          
+
+                <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-white mb-4">Welding Defect Predictor</h1>
+            </div>
+    
+    
+              <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2" id="animate">
+                <div class="p-2 sm:w-1/2 w-full">
+                  <div class="bg-gray-800 rounded flex p-4 h-full items-center">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-blue-400 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                      <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                      <path d="M22 4L12 14.01l-3-3"></path>
+                    </svg>
+                    <span class="title-font font-medium text-white">Current</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" class="text-sky-800 font-medium p-1" name="current" style="width:40%; position: relative; left: 5%;"/>
+                  </div>
+                </div>
+    
+    
+                <div class="p-2 sm:w-1/2 w-full">
+                  <div class="bg-gray-800 rounded flex p-4 h-full items-center">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-blue-400 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                      <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                      <path d="M22 4L12 14.01l-3-3"></path>
+                    </svg>
+                    <span class="title-font font-medium text-white">Humidity</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" class="text-sky-800 font-medium p-1" name="humidity" style="width:40%; position: relative; left: 5%;" />
+                  </div>
+                </div>
+    
+    
+                <div class="p-2 sm:w-1/2 w-full">
+                  <div class="bg-gray-800 rounded flex p-4 h-full items-center">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-blue-400 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                      <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                      <path d="M22 4L12 14.01l-3-3"></path>
+                    </svg>
+                    <span class="title-font font-medium text-white">Temperature</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" class="text-sky-800 font-medium p-1" name="temperature" style="width:40%; position: relative; left: 5%;" />
+                  </div>
+                </div>
+    
+    
+                <div class="p-2 sm:w-1/2 w-full">
+                  <div class="bg-gray-800 rounded flex p-4 h-full items-center">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-blue-400 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                      <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                      <path d="M22 4L12 14.01l-3-3"></path>
+                    </svg>
+                    <span class="title-font font-medium text-white">Flow</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" class="text-sky-800 font-medium p-1" name="flow" style="width:40%; position: relative; left: 5%;"/>
+                  </div>
+                </div>
+    
+    
+                <div class="p-2 sm:w-1/2 w-full">
+                  <div class="bg-gray-800 rounded flex p-4 h-full items-center">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-blue-400 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                      <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                      <path d="M22 4L12 14.01l-3-3"></path>
+                    </svg>
+                    <span class="title-font font-medium text-white">Job Temp.</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" class="text-sky-800 font-medium p-1" name="job_temp" style="width:40%; position: relative; left: 5%;"/>
+                  </div>
+                </div>
+    
+    
+                <div class="p-2 sm:w-1/2 w-full">
+                  <div class="bg-gray-800 rounded flex p-4 h-full items-center">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-blue-400 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                      <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                      <path d="M22 4L12 14.01l-3-3"></path>
+                    </svg>
+                    <span class="title-font font-medium text-white">Voltage</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" class="text-sky-800 font-medium p-1" name="voltage" style="width:40%; position: relative; left: 5%;"/>
+                  </div>
+                </div>
+    
+            
+
+              </div>
+              
+              <div style="position:fixed; bottom:0; background:#60a5fa; width:100%; height: 30px; right: 0px;">
+                <p class="text-sky-800 font-medium" style="text-align:end; padding-right:20px; ">by <a href="https://www.linkedin.com/in/pushkar-sawant-4484351b5/" target="_blank" rel="noopener noreferrer" title="Go to LinkedIn">Pushkar</a>  & <a href="https://www.linkedin.com/in/sammyboi1801/" target="_blank" rel="noopener noreferrer" title="Go to LinkedIn">Sam <3</a></p>
+              </div>
+    
+              <button type="submit" class="flex mx-auto mt-16 text-white bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg">Predict</button>
+
+          </form>
+          <br>
+          <br>
+          {% if message %}
+          <center>
+            <h1 class="text-white font-medium text-xl">Prediction: {{message}}</h1>
+          </center>
+          {% endif %}
+
+        </div>
+
+
+      </section>
+
+
+
+</body>
+</html>
