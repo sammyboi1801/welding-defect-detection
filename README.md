@@ -120,7 +120,26 @@ We created a simple web page using Tailwind CSS and used a Flask server for depl
 Our model is really efficient and easily runs on the resources available on the Free Tier provided by AWS. Our model hardly takes 30% of 1GB RAM while running. The total size of the model is just 35MB. This makes this model really suitable for scaling. 
 
 The cost of operation of this model is minimal, which can be our calculation of Total Cost of Ownership(TCO) of our model!
+
+
 <hr>
+
+
+NOTE:
+
+'xgboost-350' : This is the zipped file which has our xgboost model(.pkl)
+
+'main.py' : This has the code for the flask server that was used for deploying our model.
+
+'227088_WeldRight_Abstract' : This has data analysis of the dataset that we did.
+
+'Weldright.ipynb' : This has the final code for using XGBoost algorithm
+
+'templates' : This directory has the html file for the UI we made.
+
+
+<hr>
+
 
 You can find all the files for our project over here. 
 
